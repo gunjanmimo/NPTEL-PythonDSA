@@ -15,43 +15,34 @@ def repfree(s):
     return len(a) == len(s)
 
 def hillvalley(l):
-    
-    if l==[]: 
-        return False
-    stop=-1
+    if l==[]: return False
+    stop= -1
     i=1
     found=1
-    if l[0]>l[1]:
+    if(l[0]>l[1]):
         i=1
-        for i in range(i, len (l)):
-            if l[i-1]<l[1]:
-                stop=1
+        for i in range(i,len(l)):
+            if(l[i-1]<l[i]):
+                stop = i
                 break
-        if stop==-1:
-            return False
+        if stop ==-1 : return False
         i=stop
-        for i in range (i,len(l)):
-            if l[i-1]>l[i]:
+        for i in range(i,len(l)):
+            if(l[i-1]>l[i]):
                 found=0
                 break
-        return bool(found)
-    elif l[0]<l[1]:
+            return bool(found)
+    elif (l[0]<l[1]):
         for i in range(1,len(l)):
-            if l[i-1]>l[1]:
+            if(l[i-1]>l[i]):
                 stop=i
                 break
-        if stop==-1:
-            return False
-        for i in range(i,len(l)):
-            if l[i-1]<l[i]:
-                found=0
-                break
-        return bool(found)
-    else:
-        return False
-print(threesquares(7))
-print(repfree("abcd"))
-print(hillvalley([1,2,3,4,5,4]))
+            if stop==-1: return False
 
-
-        
+            for i in range(i,len(l)):
+                if(l[i-1]<l[i]):
+                    found=0
+                    break
+                return bool(found)
+            else:
+                return False
