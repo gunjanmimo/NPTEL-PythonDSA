@@ -11,6 +11,13 @@ def threesquares(m):
 
 def repfree(s):
 
+
+
+
+
+
+    
+
     a = set(s)
     return len(a) == len(s)
 
